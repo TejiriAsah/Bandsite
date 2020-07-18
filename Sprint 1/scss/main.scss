@@ -59,11 +59,11 @@ body{
     }
 }
 
-.nav-bar__tiers--active-page{
-    border-bottom: 2px solid #ffffff;
-    padding-left: 4rem;
-    padding-right: 4rem;
-}
+// .nav-bar__tiers--active-page{
+//     border-bottom: 2px solid #ffffff;
+//     padding-left: 4rem;
+//     padding-right: 4rem;
+// }
 
 .hero-container{
   /* margin-top: 1rem;*/
@@ -114,7 +114,7 @@ body{
         }
 
         @include desktop{
-            font-size: 2rem;
+            font-size: 3rem;
         }
     }
     &__image{
@@ -130,7 +130,7 @@ body{
         @include desktop{
             width: 56rem;
             height: 28.13rem;
-            margin-right: 0rem;
+            margin-left: 4rem; //margin-right: 0rem;
         }
     }
     &__image:hover{
@@ -181,8 +181,8 @@ body{
      }
 
 @include desktop{
-         padding-left: 3.75rem;
-         padding-right: 3.75rem;
+         padding-left: 5rem; //3.75rem
+         padding-right: 5rem; //3,75rem
      }
 }
 .gallery{
@@ -203,6 +203,7 @@ body{
         @include desktop{
             padding-bottom: 4rem;
             padding-top: 3rem;
+            font-size: 3rem;
           /* padding-left: 6rem;*/
         }
         
@@ -346,12 +347,19 @@ body{
     }
 }
 .socials{
-    display: flex;
-    justify-content: flex-start;
+    // display: flex;
+    // justify-content: flex-start;
     padding-bottom: 1rem;
     &__icon{
         padding-right: 2rem;
+        @include tablet{
+            // display: flex;
+            // flex-direction: row;
+            vertical-align: bottom;
+            justify-self: baseline;
+        }
     }
+
 }
 .display__logo{
     display: none;
@@ -371,11 +379,30 @@ body{
     justify-content: space-between;
     
     }
+    @include tablet{
+       .socials{
+        padding-top: 2.5rem;
+        padding-right: 6rem;
+        
+       }
+    }
     @include desktop{
         .socials{
-        // align-self:baseline;
-        margin-right: 5rem;
+        padding-top: 2.5rem;
+        padding-right: 30rem;
 
     }
 }
+}
+.linkstyle{
+    @include mobile{
+        padding-left: 6.5rem;
+    }
+    @include tablet{
+        padding-top: 1rem;
+    }
+    @include desktop{
+        padding-top: 1rem;
+    }
+
 }
