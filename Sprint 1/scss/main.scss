@@ -77,6 +77,7 @@ body{
     font-size: 2rem;
     padding-top: 3rem;
     padding-left: 1rem;
+    filter: grayscale(100%);
     @include tablet{
         height: 25rem;
         padding-top: 5rem;
@@ -92,6 +93,10 @@ body{
             width: 70%;
         }
     }
+}
+.hero-container:hover{
+    filter: grayscale(0%);
+
 }
 
 .meet{
@@ -115,6 +120,7 @@ body{
     &__image{
         width: 18rem;
         height: 150px;
+        filter: grayscale(100%);
 
         @include tablet{
             width: 45rem;
@@ -126,6 +132,9 @@ body{
             height: 28.13rem;
             margin-right: 0rem;
         }
+    }
+    &__image:hover{
+        filter: grayscale(0%);
     }
     &__quote{
         font-weight: 500;
@@ -218,6 +227,7 @@ body{
     &__divider{
        padding-top: 1.5rem;
         width:288px;
+        filter: grayscale(100%);
 
         @include tablet{
             width: 224px;
@@ -231,6 +241,9 @@ body{
            padding-left: 1.5rem;
         }
 
+    }
+    &__divider:hover{
+        filter: grayscale(0%);
     }
 @include tablet{
     padding-left: 1.5rem;
