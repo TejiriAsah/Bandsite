@@ -1,0 +1,366 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/typography';
+
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body{
+    margin: 0rem;
+    
+}
+.nav-bar{
+    background-color: #323232;
+    font-family: Avenir;
+    display:flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    height: 5rem;
+    
+
+    @include tablet{
+        flex-direction: row;
+        padding-left: 2rem;
+        font-weight: 100;
+        &__tools{
+          padding-right: 2rem;
+        }
+    }
+    @include desktop{
+        flex-direction: row;
+        padding-left: 3.75rem; 
+        li{
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    }
+    &__tiers{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 1rem;
+        padding:0rem;
+        font-weight: 100;
+        // border-bottom: 1px solid #fffff;
+        li{
+         padding-left: 0rem;
+         padding-right: 1rem;
+        //  border-bottom: 3px solid red;
+        // add padding or heifht
+
+        }
+        .navlinks{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        
+    }
+}
+
+.nav-bar__tiers--active-page{
+    border-bottom: 2px solid #ffffff;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.hero-container{
+  /* margin-top: 1rem;*/
+    background-image: url(../Assets/Images/luuk-wouters-2rxgWHby5mo-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 11.45rem;
+    color: #fff;
+    font-family: Avenir;
+    font-size: 2rem;
+    padding-top: 3rem;
+    padding-left: 1rem;
+    @include tablet{
+        height: 25rem;
+        padding-top: 5rem;
+        padding-left: 1.5rem;
+        font-size: 5rem;
+    }
+    @include desktop{
+        height: 41.87rem;
+        padding-left: 3.75rem; 
+        padding-top: 12rem;
+        font-size: 5rem;
+        .text{
+            width: 70%;
+        }
+    }
+}
+
+.meet{
+    padding-left: 1rem;
+    font-family: Avenir;
+    color: #323232;
+
+    &__artists{
+        font-weight: 700;
+        color: #323232;
+        font-size: 1.5rem;
+
+        @include tablet{
+            font-size: 3rem;
+        }
+
+        @include desktop{
+            font-size: 2rem;
+        }
+    }
+    &__image{
+        width: 18rem;
+        height: 150px;
+
+        @include tablet{
+            width: 45rem;
+            height: 22.63rem;
+        }
+
+        @include desktop{
+            width: 56rem;
+            height: 28.13rem;
+            margin-right: 0rem;
+        }
+    }
+    &__quote{
+        font-weight: 500;
+
+        @include tablet{
+            font-size: 1.7rem;
+        }
+    }
+
+    &__testrun{
+        font-weight: 100;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2.5rem;
+
+        @include tablet{
+            flex-direction: row;
+            padding-bottom: 1.5rem;
+            
+        }
+
+        @include desktop{
+            flex-direction: row;
+            padding-bottom: 3rem;
+
+            
+        }
+    }
+
+    &__def{
+        font-weight:100;
+        /*padding-right: 24px;*/
+        @include tablet{
+            padding-right: 24px;
+        }
+        @include desktop{
+            padding-right: 40px;
+        }
+    }
+
+@include tablet{
+      padding-left: 1.5rem;
+     padding-right: 1.5rem;
+     }
+
+@include desktop{
+         padding-left: 3.75rem;
+         padding-right: 3.75rem;
+     }
+}
+.gallery{
+    background-color: #FAFAFA;
+    font-family: Avenir;
+    font-weight: 700;
+    &__header{
+        font-size: 2rem;
+       /* padding-left:1rem;*/
+        padding-top: 2rem;
+        margin: 0rem;
+        color: #323232;
+
+        @include tablet{
+            font-size: 2.2rem;
+            padding-bottom: 2.5rem;
+        }
+        @include desktop{
+            padding-bottom: 4rem;
+            padding-top: 3rem;
+          /* padding-left: 6rem;*/
+        }
+        
+    }
+    &__images{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+
+        @include tablet{
+            flex-direction: row;
+            flex-wrap: wrap;
+        }  
+        @include desktop{
+            flex-direction: row;
+            flex-wrap: wrap;
+            // max-width: 1350px;
+            // width: 100%;
+        }  
+    }
+    &__divider{
+       padding-top: 1.5rem;
+        width:288px;
+
+        @include tablet{
+            width: 224px;
+            height: 126px;
+           padding-left: 1.5rem;
+        }
+
+        @include desktop{
+            width: 344px;
+            height: 193px;
+           padding-left: 1.5rem;
+        }
+
+    }
+@include tablet{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    }
+@include desktop{
+       padding-left: 3.75rem; 
+       padding-right: 3.75rem; 
+    }
+}
+.contact{
+    background-color: #323232;
+    color: #ffffff;
+    font-family: Avenir;
+    padding-left: 1rem;
+    margin: 0rem;    
+    &__info{
+        display: flex;
+        flex-direction: column;
+        font-weight: 100;
+
+        @include tablet{
+            flex-direction: row;
+        }
+
+        @include desktop{
+            flex-direction:row;
+        }
+    }
+    &__profile{
+        @include tablet{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @include desktop{
+            width: 100%;
+            display: flex;
+            flex-direction: space-evenly;
+        }
+    } 
+    h3{
+        font-size: 2rem;
+        padding-top: 2rem;
+        margin-bottom: 1.2rem;
+        margin-top: 0rem;
+    }
+
+    &__name{
+        margin-bottom: 0rem;
+        font-weight: 500;
+        line-height: 22px;
+        text-size-adjust: 24px;
+    }
+    &__agency{
+        margin-top: 0rem;
+        font-weight: 500;
+        
+    }
+    &__address{
+        font-weight: 100;
+    }
+    &__email{
+        font-weight: 100;
+    }
+    &__biko{
+        @include tablet{
+            display: flex;
+            justify-content: space-around;
+
+        }
+    }
+    @include tablet{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    @include desktop{
+        padding-left: 3.75rem; 
+        padding-right: 3.75rem; 
+        font-size: 1rem;
+    }  
+    &__copyright{
+        @include mobile{
+            padding: 0rem;
+            margin:0rem;
+        }
+    }
+    &__space{
+        @include tablet{
+            padding-left: 1rem;
+        }
+        @include desktop{
+            padding-left: 1rem;
+        }
+    }
+}
+.socials{
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+    &__icon{
+        padding-right: 2rem;
+    }
+}
+.display__logo{
+    display: none;
+@include tablet{
+    display: flex;
+}
+@include desktop{
+    display: flex;
+}
+}
+.tester{
+    width: 100%;
+    @include tablet{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    }
+    @include desktop{
+        .socials{
+        // align-self:baseline;
+        margin-right: 5rem;
+
+    }
+}
+}
