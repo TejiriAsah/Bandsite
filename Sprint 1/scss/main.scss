@@ -297,6 +297,8 @@ body{
     }
     &__email{
         font-weight: 100;
+        text-decoration: none;
+        color: #ffffff;
     }
     &__biko{
         @include tablet{
