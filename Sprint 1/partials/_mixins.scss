@@ -20,3 +20,18 @@
     }
     
 }
+
+@mixin row-wrap{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin tablet-padding{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@mixin desktop-padding{
+    padding-left: 3.75rem; 
+    padding-right: 3.75rem; 
+}

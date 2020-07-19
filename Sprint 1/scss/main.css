@@ -81,31 +81,31 @@ body {
 }
 
 .nav-bar__tiers li {
-  padding-left: 0rem;
-  padding-right: 1rem;
   text-align: center;
 }
 
-.nav-bar__tiers .navlinks {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.nav-bar ul li:first-child {
+.nav-bar__tiers li:first-child {
   border-bottom: 4px solid #ffffff;
   width: 10rem;
 }
 
 @media screen and (min-width: 768px) {
-  .nav-bar ul li:first-child {
+  .nav-bar__tiers li:first-child {
     width: 5rem;
+    margin-right: 2rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .nav-bar ul li:first-child {
+  .nav-bar__tiers li:first-child {
     width: 5rem;
+    padding-right: 3rem;
   }
+}
+
+.nav-bar__tiers .navlinks {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .hero-container {
@@ -210,7 +210,7 @@ body {
   }
 }
 
-.meet__testrun {
+.meet__background-info {
   font-weight: 100;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,7 +223,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .meet__testrun {
+  .meet__background-info {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -233,7 +233,7 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .meet__testrun {
+  .meet__background-info {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -267,8 +267,8 @@ body {
 
 @media screen and (min-width: 1200px) {
   .meet {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
 }
 
@@ -333,6 +333,7 @@ body {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    max-width: 1300px;
   }
 }
 
@@ -514,12 +515,6 @@ body {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .contact__space {
-    padding-left: 1rem;
-  }
-}
-
 .socials {
   padding-bottom: 1rem;
 }
@@ -547,20 +542,12 @@ body {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .display__logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.tester {
+.reach-us {
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  .tester {
+  .reach-us {
     padding-top: 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -576,14 +563,14 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .tester .socials {
+  .reach-us .socials {
     padding-top: 2.5rem;
     padding-right: 6rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .tester .socials {
+  .reach-us .socials {
     padding-top: 2.5rem;
     padding-right: 30rem;
   }

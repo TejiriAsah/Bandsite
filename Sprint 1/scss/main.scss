@@ -45,27 +45,28 @@ body{
         font-weight: 100;
         
         li{
-         padding-left: 0rem;
-         padding-right: 1rem;
-        text-align: center;
+         text-align: center;
         }
 
+        li:first-child{
+            border-bottom: 4px solid $pry-color;
+            width: 10rem;
+            @include tablet{
+                width: 5rem;
+                margin-right: 2rem;
+            }
+            @include desktop{
+                width: 5rem;
+                padding-right: 3rem;
+            }
+    
+        }
+        
         .navlinks{
             text-decoration: none;
             color: $pry-color;
         }
         
-    }
-    ul li:first-child{
-        border-bottom: 4px solid $pry-color;
-        width: 10rem;
-        @include tablet{
-            width: 5rem;
-        }
-        @include desktop{
-            width: 5rem;
-        }
-
     }
 }
 .hero-container{
@@ -99,7 +100,6 @@ body{
 }
 .hero-container:hover{
     filter: grayscale(0%);
-
 }
 
 .meet{
@@ -133,7 +133,7 @@ body{
         @include desktop{
             width: 56rem;
             height: 28.13rem;
-            margin-left: 4rem; //margin-right: 0rem;
+            margin-left: 4rem; 
         }
     }
     &__image:hover{
@@ -147,7 +147,7 @@ body{
         }
     }
 
-    &__testrun{
+    &__background-info{
         font-weight: 100;
         display: flex;
         flex-direction: column;
@@ -162,8 +162,6 @@ body{
         @include desktop{
             flex-direction: row;
             padding-bottom: 3rem;
-
-            
         }
     }
 
@@ -179,13 +177,11 @@ body{
     }
 
 @include tablet{
-      padding-left: 1.5rem;
-     padding-right: 1.5rem;
+      @include tablet-padding;
      }
 
 @include desktop{
-         padding-left: 5rem; //3.75rem
-         padding-right: 5rem; //3,75rem
+        @include desktop-padding;
      }
 }
 .gallery{
@@ -218,14 +214,11 @@ body{
         padding-bottom: 1rem;
 
         @include tablet{
-            flex-direction: row;
-            flex-wrap: wrap;
+            @include row-wrap;
         }  
         @include desktop{
-            flex-direction: row;
-            flex-wrap: wrap;
-            // max-width: 1350px;
-            // width: 100%;
+            @include row-wrap;
+            max-width: 1300px;
         }  
     }
     &__divider{
@@ -250,12 +243,10 @@ body{
         filter: grayscale(0%);
     }
 @include tablet{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    @include tablet-padding;
     }
 @include desktop{
-       padding-left: 3.75rem; 
-       padding-right: 3.75rem; 
+       @include desktop-padding;
     }
 }
 .contact{
@@ -325,13 +316,11 @@ body{
         }
     }
     @include tablet{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+       @include tablet-padding;
     }
     
     @include desktop{
-        padding-left: 3.75rem; 
-        padding-right: 3.75rem; 
+        @include desktop-padding;
         font-size: 1rem;
     }  
     &__copyright{
@@ -344,9 +333,6 @@ body{
         @include tablet{
             padding-left: 1rem;
         }
-        @include desktop{
-            padding-left: 1rem;
-        }
     }
 }
 .socials{
@@ -354,8 +340,6 @@ body{
     &__icon{
         padding-right: 2rem;
         @include tablet{
-            // display: flex;
-            // flex-direction: row;
             vertical-align: bottom;
             justify-self: baseline;
         }
@@ -367,11 +351,8 @@ body{
 @include tablet{
     display: flex;
 }
-@include desktop{
-    display: flex;
 }
-}
-.tester{
+.reach-us{
     width: 100%;
     @include tablet{
     padding-top: 2rem;
