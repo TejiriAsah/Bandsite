@@ -124,6 +124,7 @@ body{
         width: 18rem;
         height: 150px;
         filter: grayscale(100%);
+        padding-bottom: 1rem;
 
         @include tablet{
             width: 45rem;
@@ -211,7 +212,7 @@ body{
         display:flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: 1rem;
+        padding-bottom: 2.5rem;
 
         @include tablet{
             @include row-wrap;
