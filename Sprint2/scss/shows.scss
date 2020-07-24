@@ -1,0 +1,74 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/typography';
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+
+
+body{
+    margin: 0;
+    font-family: Avenir;
+    // @include tablet{
+    //     @include tablet-padding;
+    // }
+    // @include desktop{
+    //     @include desktop-padding;
+    // }
+}
+
+
+
+
+
+
+
+.shows{
+    font-family: Avenir;
+    font-weight: 500; //info,date,building,venue,location,city
+    padding-left: 16px;
+    padding-right: 16px;
+    // display: flex;
+    // flex-direction: column;
+    &__info{
+        color:#AFAFAF;
+    }
+    &__date{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    &__building{
+        color: #AFAFAF;
+    }
+    &__venue{
+        font-weight: 100;
+    }
+    &__site{
+        color: #AFAFAF;
+    }
+    &__city{
+        font-weight: 100;
+    }
+    &__buy-button{
+        height: 3rem;
+        width: 18rem;
+        background-color: #323232;
+        color: #ffffff;
+        font-size: 1rem;
+        border: 0;
+        border-radius: 6px;
+        
+    }
+    
+
+}
+.shows__area{
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

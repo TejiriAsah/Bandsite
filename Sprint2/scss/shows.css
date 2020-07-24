@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/_GlobalFont/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/_GlobalFont/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/_GlobalFont/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Avenir;
+}
+
+.shows {
+  font-family: Avenir;
+  font-weight: 500;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.shows__info {
+  color: #AFAFAF;
+}
+
+.shows__date {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.shows__building {
+  color: #AFAFAF;
+}
+
+.shows__venue {
+  font-weight: 100;
+}
+
+.shows__site {
+  color: #AFAFAF;
+}
+
+.shows__city {
+  font-weight: 100;
+}
+
+.shows__buy-button {
+  height: 3rem;
+  width: 18rem;
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 6px;
+}
+
+.shows__area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .shows__area {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=shows.css.map */

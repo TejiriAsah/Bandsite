@@ -69,6 +69,19 @@ body{
         
     }
 }
+.nav-bar__tiers--active{
+    border-bottom: 5px solid $pry-color;
+    width: 50%;
+    // padding-bottom: 1rem;
+    padding-bottom: 0.1rem;
+    @include tablet{
+        padding-bottom: 1.5rem;
+        
+    }
+    @include desktop{
+        padding-bottom: 1.8rem;
+    }
+}
 .hero-container{
   
     background-image: url(../Assets/Images/luuk-wouters-2rxgWHby5mo-unsplash.jpg);
