@@ -1,23 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let commentContent = [
 
 {
     name: 'Michael Lyons',
-    timeStammp: '12/08/2018',
+    timeStamp: '12/08/2018',
     opinion: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going.This is still simply the greatest opening of a concert I have EVER witnessed.',
        
 },
@@ -36,56 +21,145 @@ let commentContent = [
 
 ]
 
+
+
+const form = document.querySelector('.comments__form');
+
 let container= document.querySelector('.comments');
 
-for(let i =0; i < commentContent.length; i++){
 
-    let box = document.createElement('div');
+let box = document.createElement('div');
     box.classList.add('comments__box');
 
-    let bigTester = document.createElement('div');
-    bigTexter.classList.add(bigTester);
 
+function createCommment(commentObject){
+    // let box = document.createElement('div');
+    // box.classList.add('comments__box');
+
+    let parentTester2 = document.createElement('div');
+    parentTester2.classList.add('parentTester2');
 
     let area = document.createElement('div');
     area.classList.add('comments__area');
 
-    let avatarHolder = document.createElement('div');
-    avatarHolder.classList.add('avatar-holder')
+    let allAvatars = document.createElement('div');
+    allAvatars.classList.add('comments__all-avatars')
 
     let avatar = document.createElement('div');
     avatar.classList.add('comments__avatar');
 
+    let commentsCarrier = document.createElement('div');
+    commentsCarrier.classList.add('comments__carrier');
 
     let name = document.createElement('p');
-    name.innerText = commentContent[i].name;
+    name.innerText = commentObject.name;
     name.classList.add('comments__name');
 
 
     let timeStamp = document.createElement('p');
-    timeStamp.innerText = commentContent[i].timeStammp;
+    timeStamp.innerText = commentObject.timeStamp;
     timeStamp.classList.add('comments__time-stamp');
 
+    commentsCarrier.appendChild(name);
+    commentsCarrier.appendChild(timeStamp);
+
     let opinion = document.createElement('p');
-    opinion.innerText = commentContent[i].opinion;
+    opinion.innerText = commentObject.opinion;
     opinion.classList.add('comments__opinion');
 
     let separator = document.createElement('div');
     separator.classList.add('border-separator');
 
-    // bigTester.appendChild(area);
-    // bigTester.appendChild(avatar);
-
-    // avatarHolder.appendChild(avatar)
-    // area.appendChild(avatarHolder)
-    area.appendChild(name);
-    area.appendChild(timeStamp);
+    allAvatars.appendChild(avatar);
+    // allAvatars.appendChild(separator);
+   
+    // area.appendChild(name);
+    // area.appendChild(timeStamp);
+    area.appendChild(commentsCarrier);
     area.appendChild(opinion);
-    area.appendChild(separator);
+    
 
-
-    box.appendChild(area);
-
+    parentTester2.appendChild(allAvatars);
+    parentTester2.appendChild(area);
+    
+    box.appendChild(parentTester2);
+    box.appendChild(separator);
+    
     container.appendChild(box);
 
+    }
+
+for(let i =0; i < commentContent.length; i++){
+
+    createCommment(commentContent[i]);
+    
 }
+
+
+
+// let commentsContainer = document.querySelector('.comments__box');
+// console.log(commentsContainer.children);
+
+// // for(let i = 0; i< commentsContainer.children; i++){
+
+// // }
+
+// while (commentsContainer.children.length > 0){
+//     commentsContainer.removeChild(commentsContainer.children[0]);
+//}
+
+
+//push a new comment to the page, it should clear old comments and then reload with the newest comment on top
+//.unshift should push newest comment to the top of the array
+//add eventlistener to the comment
+//watch Anna's video on eventlisteners and looping
+
+// const form = document.querySelector('.comments__form');
+
+// console.log(form);
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+   
+    let userInput = event.target.fullName.value;
+    let userInputComment = event.target.remark.value;
+    
+
+    let newComment = {
+        name: userInput,
+        opinion: userInputComment,
+        
+    }
+
+    let commentsContainer = document.querySelector('.comments__box');
+    console.log(commentsContainer.children);
+
+    while (commentsContainer.children.length > 0){
+
+        commentsContainer.removeChild(commentsContainer.children[0]);
+        
+    }
+
+    commentContent.unshift(newComment);
+    
+    for(let i =0; i < commentContent.length; i++){
+
+        createCommment(commentContent[i]);
+        
+    }
+
+    
+
+   
+})  
+
+// let commentsContainer = document.querySelector('.comments__box');
+// console.log(commentsContainer.children);
+
+// while (commentsContainer.children.length > 0){
+
+//     commentsContainer.removeChild(commentsContainer.children[0]);
+    
+// }
+
+// dunno();

@@ -26,47 +26,104 @@ body{
 
 
 .shows{
-    font-family: Avenir;
+
     font-weight: 500; //info,date,building,venue,location,city
     padding-left: 16px;
     padding-right: 16px;
-    // display: flex;
-    // flex-direction: column;
+ 
+    &__heading{
+        margin-top: 32px;
+        color: $base-color;
+        // margin-bottom: 40px;
+        margin-bottom: 0rem;
+    }
     &__info{
-        color:#AFAFAF;
+        color: $silver;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
     }
     &__date{
         font-size: 1.2rem;
         font-weight: 500;
+        @include shows-margin;
     }
     &__building{
-        color: #AFAFAF;
+        color: $silver;
+        margin-top: 0rem;
+        margin-bottom: 1rem;
     }
     &__venue{
         font-weight: 100;
+       @include shows-margin;
+       @include tablet{
+        margin-left: 1rem;
+        margin-right: 1rem;
+       }
     }
     &__site{
-        color: #AFAFAF;
+        color: $silver;
+        margin-top: 0rem;
     }
     &__city{
         font-weight: 100;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
     }
     &__buy-button{
         height: 3rem;
         width: 18rem;
-        background-color: #323232;
+        background-color: $base-color;
         color: #ffffff;
         font-size: 1rem;
         border: 0;
-        border-radius: 6px;
-        
+        border-radius: 6px; 
+        @include tablet{
+            width: 12rem;
+            margin-top: 0.2rem;
+        }
     }
-    
+    &__buy-button:last-child{
+        margin-bottom: 1rem;
+    }
+    &__tabletcategories{
+        display: none;
+        @include tablet{
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            justify-content: space-between;
+            padding: 0rem;
+            margin-right: 15rem;
+            
+        }
+        @include desktop{
+            margin-right: 25rem;
+        }
+    }
+    @include tablet{
+        &__info{
+            display: none;
+            
+        }
+        &__building{
+            display: none;
+        }
+        &__site{
+            display:none;
+        }
+    }
+
+@include tablet{
+        @include tablet-padding;
+       }
+  
+@include desktop{
+          @include desktop-padding;
+       } 
 
 }
 .shows__area{
-    display: flex;
-    flex-direction: column;
+    @include column-flex;
     @include tablet{
         flex-direction: row;
         justify-content: space-between;

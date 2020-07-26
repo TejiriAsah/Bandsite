@@ -25,6 +25,14 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+@mixin column-flex{
+    display: flex;
+    flex-direction: column;
+}
+@mixin row-flex{
+    display: flex;
+    flex-direction: row;
+}
 
 @mixin tablet-padding{
     padding-left: 1.5rem;
@@ -36,7 +44,19 @@
     padding-right: 3.75rem; 
 }
 @mixin avatar{
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 35px;
+}
+
+//shows mixins
+
+@mixin shows-margin{
+    margin-top: 0rem;
+    margin-bottom: 1.5rem;
+}
+@mixin center-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

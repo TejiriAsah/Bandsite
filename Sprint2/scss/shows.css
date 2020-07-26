@@ -27,35 +27,58 @@ body {
 }
 
 .shows {
-  font-family: Avenir;
   font-weight: 500;
   padding-left: 16px;
   padding-right: 16px;
 }
 
+.shows__heading {
+  margin-top: 32px;
+  color: #323232;
+  margin-bottom: 0rem;
+}
+
 .shows__info {
   color: #AFAFAF;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .shows__date {
   font-size: 1.2rem;
   font-weight: 500;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
 }
 
 .shows__building {
   color: #AFAFAF;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
 }
 
 .shows__venue {
   font-weight: 100;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .shows__venue {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 .shows__site {
   color: #AFAFAF;
+  margin-top: 0rem;
 }
 
 .shows__city {
   font-weight: 100;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
 }
 
 .shows__buy-button {
@@ -66,6 +89,71 @@ body {
   font-size: 1rem;
   border: 0;
   border-radius: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .shows__buy-button {
+    width: 12rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.shows__buy-button:last-child {
+  margin-bottom: 1rem;
+}
+
+.shows__tabletcategories {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .shows__tabletcategories {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    list-style-type: none;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0rem;
+    margin-right: 15rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .shows__tabletcategories {
+    margin-right: 25rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shows__info {
+    display: none;
+  }
+  .shows__building {
+    display: none;
+  }
+  .shows__site {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shows {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .shows {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
 }
 
 .shows__area {

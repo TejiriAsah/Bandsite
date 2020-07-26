@@ -80,6 +80,7 @@ for(let i=0; i < showsContent.length; i++){
     building.innerText = showsContent[i].building;
     building.classList.add('shows__building');
 
+
     let venue = document.createElement('p');
     venue.innerText = showsContent[i].venue;
     venue.classList.add('shows__venue');
@@ -91,6 +92,11 @@ for(let i=0; i < showsContent.length; i++){
     let city = document.createElement('p');
     city.innerText = showsContent[i].city;
     city.classList.add('shows__city');
+
+    let separator = document.createElement('div');
+    separator.classList.add('border-separator');
+    
+    
 
     // box.appendChild(info);
     // box.appendChild(date);
@@ -105,7 +111,7 @@ for(let i=0; i < showsContent.length; i++){
     area.appendChild(venue);
     area.appendChild(site);
     area.appendChild(city);
-
+    // area.appendChild(separator);
 
 
 
@@ -113,34 +119,12 @@ for(let i=0; i < showsContent.length; i++){
     let button = document.createElement('button');
     button.innerText = 'BUY TICKETS'
     button.classList.add('shows__buy-button');
-    //box.appendChild(button)
+    
     area.appendChild(button);
 
+    box.appendChild(separator);
     box.appendChild(area);
+    
     container.appendChild(box);
 }
 
-// const buttonContainer = document.getElementsByClassName("shows__buy-button")
-
-// for(let i = 0; i < showsContent.length, i++){
-//     const button = document.createElement("button");
-//     button.innertext = i;
-
-//     button.addEventListener('click', function(){
-//         console.log(i)
-//     })
-
-//     buttonContainer.appenchild(box);
-// }
-
-
-
-
-
-
-// let button = document.getElementsByClassName('shows__buy-button');
-// for(let i=0; i < showsContent.length; i++){
-//     button[i].onclick function (){
-//         console.log(this.innerHTML);
-//     }
-// }

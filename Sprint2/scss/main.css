@@ -28,7 +28,6 @@ body {
 
 .nav-bar {
   background-color: #323232;
-  font-family: Avenir;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,22 +111,41 @@ body {
   }
 }
 
-.container {
+.container, .page2-container {
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 11.45rem;
   color: #ffffff;
-  font-family: Avenir;
   font-size: 2rem;
   padding-top: 3rem;
   padding-left: 1rem;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+}
+
+.container .text__paragraph, .page2-container .text__paragraph {
+  font-size: 1rem;
+}
+
+.container .text__label, .page2-container .text__label {
+  font-size: 2.5rem;
+  padding-bottom: 4rem;
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  .container .text__label, .page2-container .text__label {
+    font-size: 3rem;
+    padding-right: 20rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container .text__label, .page2-container .text__label {
+    padding-right: 43rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container, .page2-container {
     height: 25rem;
     padding-top: 5rem;
     padding-left: 1.5rem;
@@ -136,20 +154,15 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .container, .page2-container {
     height: 41.87rem;
     padding-left: 3.75rem;
     padding-top: 12rem;
     font-size: 5rem;
   }
-  .container .text {
+  .container .text, .page2-container .text {
     width: 70%;
   }
-}
-
-.container:hover {
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
 }
 
 .page1-container {
@@ -157,26 +170,28 @@ body {
 }
 
 .page2-container {
-  background-image: url(../Assets/Images/Photo-gallery-4.jpg);
-  height: 29rem;
+  background-image: url(../Assets/Images/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg);
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-size: cover;
-}
-
-@media screen and (min-width: 768px) {
-  .page2-container {
-    height: 41.88rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .page2-container {
-    height: 41.88rem;
-  }
+  background-position: center;
 }
 
 .meet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 1rem;
-  font-family: Avenir;
+  padding-right: 1rem;
   color: #323232;
 }
 
@@ -188,13 +203,15 @@ body {
 
 @media screen and (min-width: 768px) {
   .meet__artists {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-right: 24rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .meet__artists {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-right: 28rem;
   }
 }
 
@@ -300,7 +317,6 @@ body {
 
 .gallery {
   background-color: #FAFAFA;
-  font-family: Avenir;
   font-weight: 700;
 }
 
@@ -422,8 +438,8 @@ body {
 }
 
 .comments__avatar {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 35px;
   margin-right: 0.5rem;
 }
@@ -435,17 +451,92 @@ body {
   margin-bottom: 1rem;
 }
 
+.comments__carrier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__carrier {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.comments__name {
+  margin: 0;
+}
+
 .comments__time-stamp {
+  margin: 0;
+  font-weight: 100;
   color: #AFAFAF;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__time-stamp {
+    margin-left: 1rem;
+  }
 }
 
 .comments__opinion {
   font-weight: 100;
 }
 
+@media screen and (min-width: 768px) {
+  .comments__opinion {
+    margin-right: 8.5rem;
+    margin-top: 0.3rem;
+    width: 33rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .comments__opinion {
+    margin-right: 31rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .comments {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .comments {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
 input {
   padding: 0.5rem;
   font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  input {
+    width: 37.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  textarea {
+    width: 37.5rem;
+  }
 }
 
 label {
@@ -453,29 +544,26 @@ label {
   color: #AFAFAF;
   font-size: 1rem;
   font-weight: 500;
+  margin-bottom: 0.2rem;
 }
 
 ::-webkit-input-placeholder {
   color: #323232;
-  font-family: Avenir;
   font-size: 1rem;
 }
 
 :-ms-input-placeholder {
   color: #323232;
-  font-family: Avenir;
   font-size: 1rem;
 }
 
 ::-ms-input-placeholder {
   color: #323232;
-  font-family: Avenir;
   font-size: 1rem;
 }
 
 ::placeholder {
   color: #323232;
-  font-family: Avenir;
   font-size: 1rem;
 }
 
@@ -485,21 +573,29 @@ label {
   border: 0;
   border-radius: 6px;
   height: 4rem;
-  width: 18rem;
+  width: 100%;
   font-size: 1rem;
   padding: 0;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .comment__button {
+    width: 10rem;
+    height: 3rem;
+    margin-left: 27.5rem;
+  }
+}
+
 .border-separator {
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 2px solid #E1E1E1;
 }
 
 .comments__avatar {
   background-color: #AFAFAF;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 35px;
 }
 
@@ -511,6 +607,13 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.parentTester2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.5rem;
 }
 
 .contact {
