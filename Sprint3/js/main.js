@@ -33,7 +33,7 @@ function refreshLoop(comments) {
   for (let i = 0; i < comments.length; i++) {
     createCommment(comments[i]);
   }
-  createCommment.reset();
+  document.getElementById("commentsForm").reset();
 }
 
 function createCommment(commentObject) {
