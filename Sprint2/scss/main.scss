@@ -2,8 +2,6 @@
 @import '../partials/mixins';
 @import '../partials/typography';
 
-
-
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -13,12 +11,11 @@ body{
     
 }
 .nav-bar{
-    background-color: #323232;
+    background-color: $base-color;
     @include column-flex;
     padding-top: 1rem;
     height: 5rem;
     
-
     @include tablet{
         flex-direction: row;
         padding-left: 2rem;
@@ -27,6 +24,7 @@ body{
           padding-right: 2rem;
         }
     }
+
     @include desktop{
         flex-direction: row;
         padding-left: 3.75rem; 
@@ -35,10 +33,10 @@ body{
             font-weight: 500;
         }
     }
+
     &__tiers{
         list-style-type: none;
         display: flex;
-        // justify-content: space-evenly;
         font-size: 1rem;
         padding:0rem;
         font-weight: 100;
@@ -56,13 +54,11 @@ body{
             text-decoration: none;
             color: $pry-color;
         }
-        
     }
 }
 .nav-bar__tiers--active{
     border-bottom: 5px solid $pry-color;
     width: 50%;
-    // padding-bottom: 1rem;
     padding-bottom: 0.1rem;
     @include tablet{
         padding-bottom: 1.5rem;
@@ -73,8 +69,6 @@ body{
     }
 }
 .container{
-  
-    // background-image: url(../Assets/Images/luuk-wouters-2rxgWHby5mo-unsplash.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -85,27 +79,13 @@ body{
     padding-left: 1rem;
     // filter: grayscale(100%);
     
-    .text__paragraph{
-        font-size: 1rem;
-    }
-    .text__label{
-        font-size: 2.5rem;
-        padding-bottom: 4rem;
-        @include tablet{
-            font-size: 3rem;
-            padding-right: 20rem;
-        }
-        @include desktop{
-            padding-right: 43rem;
-        }
-    }
-
     @include tablet{
         height: 25rem;
         padding-top: 5rem;
         padding-left: 1.5rem;
         font-size: 5rem;
     }
+
     @include desktop{
         height: 41.87rem;
         padding-left: 3.75rem; 
@@ -123,21 +103,19 @@ body{
     background-image: url(../Assets/Images/luuk-wouters-2rxgWHby5mo-unsplash.jpg);
     
 }
+
 .page2-container{
     background-image: url(../Assets/Images/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg) ;
     @extend .container;
-    // min-height: 29rem;
     width: 100%;
     height: fit-content;
     background-size: cover;
     background-position: center;
-    // @include tablet{
-    //     height: 41.88rem;
-    // }
-    // @include desktop{
-    //     height: 41.88rem;
-    // }
+    @include desktop{
+        padding-top: 10rem;
+    }
 }
+
 .meet{
     @include center-page;
     padding-left: 1rem;
@@ -159,6 +137,7 @@ body{
             margin-right: 28rem;
         }
     }
+
     &__image{
         width: 18rem;
         height: 150px;
@@ -176,9 +155,11 @@ body{
             margin-left: 4rem; 
         }
     }
+
     &__image:hover{
         filter: grayscale(0%);
     }
+
     &__quote{
         font-weight: 500;
 
@@ -206,7 +187,6 @@ body{
 
     &__def{
         font-weight:100;
-        
         @include tablet{
             padding-right: 24px;
         }
@@ -223,28 +203,29 @@ body{
         @include desktop-padding;
      }
 }
+
 .gallery{
     background-color: #FAFAFA;
     font-weight: 700;
     &__header{
         font-size: 2rem;
-       
         padding-top: 2rem;
         margin: 0rem;
-        color: #323232;
+        color: $base-color;
 
         @include tablet{
             font-size: 2.2rem;
             padding-bottom: 2.5rem;
         }
+
         @include desktop{
             padding-bottom: 4rem;
             padding-top: 3rem;
             font-size: 3rem;
           
         }
-        
     }
+
     &__images{
         
         @include column-flex;
@@ -259,6 +240,7 @@ body{
             max-width: 1300px;
         }  
     }
+
     &__divider{
        padding-top: 1.5rem;
         width:288px;
@@ -275,19 +257,20 @@ body{
             height: 193px;
            padding-left: 1.5rem;
         }
-
     }
+
     &__divider:hover{
         filter: grayscale(0%);
     }
+
 @include tablet{
     @include tablet-padding;
     }
+
 @include desktop{
        @include desktop-padding;
     }
 }
-
 
 .parent-tester{
     @include row-flex;
@@ -345,6 +328,36 @@ body{
         }
     }
 
+    &__avatar{
+        background-color: $silver;
+        // margin-top: 1.5rem;
+        object-fit: cover;
+        @include avatar;
+    }
+
+    &__box{
+        @include column-flex;
+      
+    }
+
+    &__button{
+        background-color: $base-color;
+        color: #FFFFFF;
+        border: 0;
+        border-radius: 6px;
+        height: 4rem;
+        width: 100%;
+        font-size: 1rem;
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        @include tablet{
+            width: 10rem;
+            height: 3rem;
+            margin-left: 27.5rem;
+        }
+    }
+
  @include tablet{
         @include tablet-padding;
         margin-left: 2rem;
@@ -360,10 +373,12 @@ body{
 
 input{
     padding: 0.5rem;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
     margin-bottom: 1rem;
+    border-width: 1%;
     @include tablet{
         width: 37.5rem;
+        
     }
 }
 textarea{
@@ -383,49 +398,18 @@ label{
     color: $base-color;
     font-size: 1rem;
 }
-.comment__button{
-    background-color: $base-color;
-    color: #FFFFFF;
-    border: 0;
-    border-radius: 6px;
-    height: 4rem;
-    width: 100%;
-    font-size: 1rem;
-    padding: 0;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    @include tablet{
-        width: 10rem;
-        height: 3rem;
-        margin-left: 27.5rem;
-    }
 
-}
-.border-separator{
-    border-bottom: 2px solid #E1E1E1;
-    
-}
 
-.comments__avatar{
-    background-color: $silver;
-    // margin-top: 1.5rem;
-    @include avatar;
-}
-
-.comments__box{
-    @include column-flex;
-  
-}
 
 .parentTester2{
     display: flex;
     margin-top: 1.5rem;
+    border-bottom: 2px solid #E1E1E1;
 }
-// .comments__area{
-//     margin-top: 1.5rem;
-// }
-
-
+.parentTester2:first-child{
+    
+    border-top: 2px solid #E1E1E1
+}
 
 
 

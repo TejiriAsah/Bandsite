@@ -1,165 +1,131 @@
-let commentContent = [
+let commentContent = [];
 
-{
-    name: 'Michael Lyons',
-    timeStamp: '12/08/2018',
-    opinion: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going.This is still simply the greatest opening of a concert I have EVER witnessed.',
-       
-},
+const form = document.querySelector(".comments__form");
 
-{
-    name: 'Gary Wong',
-    timeStamp: '12/12/2018',
-    opinion: ' Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!' ,                                                                                                                                                  
-},
+let container = document.querySelector(".comments");
 
-{
-    name:'Theodore Duncan',
-    timeStamp:'11/15/2018',
-    opinion: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!',
-},
+let box = document.createElement("div");
+box.classList.add("comments__box");
+container.appendChild(box);
 
-]
+axios
+  .get(
+    "https://project-1-api.herokuapp.com/comments?api_key=02f0cdb9-dd36-4f4b-87e0-7c369cea0f93"
+  )
+  .then((response) => {
+    console.log("this is your response:", response);
+    let commentsPage = document.querySelector(".comments");
+    // commentsPage.innerText = response.data;
+    commentConent = response.data;
 
+    refreshLoop(response.data);
+  });
 
+function refreshLoop(comments) {
+  let commentsContainer = document.querySelector(".comments__box");
 
-const form = document.querySelector('.comments__form');
+  while (commentsContainer.children.length > 0) {
+    commentsContainer.removeChild(commentsContainer.children[0]);
+  }
+  comments.sort(function compareNumbers(comment1, comment2) {
+    return comment2.timestamp - comment1.timestamp;
+  });
 
-let container= document.querySelector('.comments');
-
-
-let box = document.createElement('div');
-    box.classList.add('comments__box');
-
-
-function createCommment(commentObject){
-    // let box = document.createElement('div');
-    // box.classList.add('comments__box');
-
-    let parentTester2 = document.createElement('div');
-    parentTester2.classList.add('parentTester2');
-
-    let area = document.createElement('div');
-    area.classList.add('comments__area');
-
-    let allAvatars = document.createElement('div');
-    allAvatars.classList.add('comments__all-avatars')
-
-    let avatar = document.createElement('div');
-    avatar.classList.add('comments__avatar');
-
-    let commentsCarrier = document.createElement('div');
-    commentsCarrier.classList.add('comments__carrier');
-
-    let name = document.createElement('p');
-    name.innerText = commentObject.name;
-    name.classList.add('comments__name');
-
-
-    let timeStamp = document.createElement('p');
-    timeStamp.innerText = commentObject.timeStamp;
-    timeStamp.classList.add('comments__time-stamp');
-
-    commentsCarrier.appendChild(name);
-    commentsCarrier.appendChild(timeStamp);
-
-    let opinion = document.createElement('p');
-    opinion.innerText = commentObject.opinion;
-    opinion.classList.add('comments__opinion');
-
-    let separator = document.createElement('div');
-    separator.classList.add('border-separator');
-
-    allAvatars.appendChild(avatar);
-    // allAvatars.appendChild(separator);
-   
-    // area.appendChild(name);
-    // area.appendChild(timeStamp);
-    area.appendChild(commentsCarrier);
-    area.appendChild(opinion);
-    
-
-    parentTester2.appendChild(allAvatars);
-    parentTester2.appendChild(area);
-    
-    box.appendChild(parentTester2);
-    box.appendChild(separator);
-    
-    container.appendChild(box);
-
-    }
-
-for(let i =0; i < commentContent.length; i++){
-
-    createCommment(commentContent[i]);
-    
+  for (let i = 0; i < comments.length; i++) {
+    createCommment(comments[i]);
+  }
 }
 
+function createCommment(commentObject) {
+  // let box = document.createElement('div');
+  // box.classList.add('comments__box');
 
+  let parentTester2 = document.createElement("div");
+  parentTester2.classList.add("parentTester2");
 
-// let commentsContainer = document.querySelector('.comments__box');
-// console.log(commentsContainer.children);
+  let area = document.createElement("div");
+  area.classList.add("comments__area");
 
-// // for(let i = 0; i< commentsContainer.children; i++){
+  let allAvatars = document.createElement("div");
+  allAvatars.classList.add("comments__all-avatars");
 
-// // }
+  let avatar = document.createElement("div");
+  avatar.classList.add("comments__avatar");
 
-// while (commentsContainer.children.length > 0){
-//     commentsContainer.removeChild(commentsContainer.children[0]);
-//}
+  let commentsCarrier = document.createElement("div");
+  commentsCarrier.classList.add("comments__carrier");
 
+  let name = document.createElement("p");
+  name.innerText = commentObject.name;
+  name.classList.add("comments__name");
 
-//push a new comment to the page, it should clear old comments and then reload with the newest comment on top
-//.unshift should push newest comment to the top of the array
-//add eventlistener to the comment
-//watch Anna's video on eventlisteners and looping
+  let timeStamp = document.createElement("p");
+  timeStamp.innerText = new Date(commentObject.timestamp).toDateString();
+  timeStamp.classList.add("comments__time-stamp");
 
-// const form = document.querySelector('.comments__form');
+  commentsCarrier.appendChild(name);
+  commentsCarrier.appendChild(timeStamp);
 
-// console.log(form);
+  let opinion = document.createElement("p");
+  opinion.innerText = commentObject.comment;
+  opinion.classList.add("comments__opinion");
 
-form.addEventListener('submit', function(event){
-    event.preventDefault();
-   
-    let userInput = event.target.fullName.value;
-    let userInputComment = event.target.remark.value;
-    
+  allAvatars.appendChild(avatar);
+  // allAvatars.appendChild(separator);
 
-    let newComment = {
-        name: userInput,
-        opinion: userInputComment,
-        
-    }
+  // area.appendChild(name);
+  // area.appendChild(timeStamp);
+  area.appendChild(commentsCarrier);
+  area.appendChild(opinion);
 
-    let commentsContainer = document.querySelector('.comments__box');
-    console.log(commentsContainer.children);
+  parentTester2.appendChild(allAvatars);
+  parentTester2.appendChild(area);
 
-    while (commentsContainer.children.length > 0){
+  box.appendChild(parentTester2);
 
-        commentsContainer.removeChild(commentsContainer.children[0]);
-        
-    }
+  container.appendChild(box);
+}
 
-    commentContent.unshift(newComment);
-    
-    for(let i =0; i < commentContent.length; i++){
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-        createCommment(commentContent[i]);
-        
-    }
+  let userInput = event.target.fullName.value;
+  let userInputComment = event.target.remark.value;
+  let userInputTime = Date.now();
 
-    
+  let newComment = {
+    name: userInput,
+    comment: userInputComment,
+  };
 
-   
-})  
+  let commentsContainer = document.querySelector(".comments__box");
 
-// let commentsContainer = document.querySelector('.comments__box');
-// console.log(commentsContainer.children);
+  while (commentsContainer.children.length > 0) {
+    commentsContainer.removeChild(commentsContainer.children[0]);
+  }
 
-// while (commentsContainer.children.length > 0){
+  commentContent.unshift(newComment);
 
-//     commentsContainer.removeChild(commentsContainer.children[0]);
-    
-// }
+  for (let i = 0; i < commentContent.length; i++) {
+    createCommment(commentContent[i]);
+  }
 
-// dunno();
+  axios
+    .post(
+      "https://project-1-api.herokuapp.com/comments?api_key=02f0cdb9-dd36-4f4b-87e0-7c369cea0f93",
+      newComment
+    )
+    .then((response) => {
+      console.log(response);
+      return axios.get(
+        "https://project-1-api.herokuapp.com/comments?api_key=02f0cdb9-dd36-4f4b-87e0-7c369cea0f93"
+      );
+    })
+    .then((response) => {
+      console.log("new comments added:", response);
+      refreshLoop(response.data);
+    })
+    .catch((error) => {
+      console.error("fix this!");
+    });
+});
